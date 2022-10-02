@@ -31,9 +31,9 @@ My name is Tim te Beek, and I'm a Java consultant at JDriven, in the Netherlands
 
 ---
 layout: image-right
-#image: https://source.unsplash.com/1600x900/?timetravel
 image: https://images.unsplash.com/photo-1615053835081-4218b100dae9?h=900&w=800
 ---
+
 # ~~Java Consultant~~
 # Time traveler
 
@@ -52,11 +52,11 @@ And then the next, I'm thrown ten years back in time, to Java 7 or 8 and outdate
 My assignments typically see me bring these outdated technology stacks, back up to date.
 
 And perhaps you face the same challenges as I do;
-at a conference like this you hear all about new framwwork & language features,
+at a conference like this you hear all about new framework & language features,
 yet back at work, you're stuck using Java 8 and JUnit 4.
 And migrating all of that by hand can seem daunting, if it ever gets priority.
-
 -->
+
 ---
 layout: image-right
 #image: https://source.unsplash.com/1600x900/?automate
@@ -268,8 +268,9 @@ Their changes are minimally invasive, and guaranteed to work, in part due to the
 By manipulating the full Abstract Syntax Tree, OpenRewrite can far exceed simple search and replace operations.
 -->
 ---
+# https://duotone.shapefactory.co/?f=e17d00&t=193569&q=lego%20house
 layout: cover
-background: 
+background: /lego-blocks.png
 ---
 
 # Recipes
@@ -299,7 +300,9 @@ and alter dependencies & plugins.
 
 -->
 ---
-
+layout: image-right
+image: /visitor.png
+---
 
 # Visitors
 <nbsp/>
@@ -320,7 +323,9 @@ Typically, you can get very far only configuring,
 combining and applying existing recipes through a yaml description file.
 -->
 ---
-
+layout: cover
+background: /lego-truck.png
+---
 
 # Modules
 <nbsp/>
@@ -669,31 +674,34 @@ The community plays a large role in the development of new recipes.
 
 
 # Where to learn more
+<nbsp/>
 
-<img src="/rewrite-logo-only.png" width="60" display="inline"/> https://docs.openrewrite.org <br/>
+<img src="/rewrite-logo-only.png" width="60" display="inline"/> https://docs.openrewrite.org
 
-<logos-github-icon /> https://github.com/openrewrite <br/>
+<img src="/moderne-logo-only.png" width="60" display="inline"/> https://public.moderne.io
 
-<logos-spring-icon /> https://github.com/
-spring-projects-experimental/spring-boot-migrator <br/>
+<logos-github-icon class="text-5xl"/> https://github.com/openrewrite
+<br/>
+<br/>
 
-<img src="/rewrite-logo-only.png" width="60" display="inline"/> https://public.moderne.io <br/>
+<logos-spring-icon class="text-5xl"/> https://github.com/spring-projects-experimental/spring-boot-migrator
+<br/>
+<br/>
 
-<logos-slack-icon /> https://RewriteOSS.slack.com <br/>
-
+<logos-slack-icon  class="text-5xl"/> https://RewriteOSS.slack.com
 
 <!--
 So with that, we are getting near the end of my presentation.
 Before I send you on your way, I want to recommend a few resources where you can learn more.
 
+If you want to try some Recipes quickly,
+on Open Source projects,
+have a look at public.moderne.io
+
 There’s extensive documentation and tutorials available on OpenRewrite.
 
 Development is all on GitHub, with new suggestions picked up with surprising speed.
 And as we have already seen, it’s quite easy to contribute minor migration steps.
-
-If you want to try some Recipes quickly,
-on Open Source projects,
-have a look at public.moderne.io
 
 And if you have any questions, I’ve found the team behind OpenRewrite to be very friendly and responsive.
 -->
