@@ -15,13 +15,14 @@ colorSchema: 'light'
 # show line numbers in code blocks
 lineNumbers: true
 
+# https://sli.dev/custom/#frontmatter-configures
+defaults:
+  layout: 'default'
 
+# Cover slide
 layout: image
-image: /devoxx-ma-cover.png
+image: /cover-devoxx-ma.png
 ---
-
-
-
 <!--
 Hi all, and welcome to Major Migrations Made Easy.
 
@@ -31,12 +32,16 @@ My name is Tim te Beek, and I'm a Java consultant at JDriven, in the Netherlands
 ---
 layout: image-right
 #image: https://source.unsplash.com/1600x900/?timetravel
-image: https://images.unsplash.com/photo-1615053835081-4218b100dae9
+image: https://images.unsplash.com/photo-1615053835081-4218b100dae9?h=900&w=800
 ---
-# ~~Consultant~~ Time traveler
+# ~~Java Consultant~~
+# Time traveler
+
+- Migrate outdated technology
 
 - Switch assignments often
-- Outdated technology stacks
+
+- Focus on JVM & Automation
 
 <!--
 Now as a consultant, I often switch assignments,
@@ -49,16 +54,24 @@ My assignments typically see me bring these outdated technology stacks, back up 
 And perhaps you face the same challenges as I do;
 at a conference like this you hear all about new framwwork & language features,
 yet back at work, you're stuck using Java 8 and JUnit 4.
-And migrating all of that by hand can seem daunting, and rarely gets priority.
+And migrating all of that by hand can seem daunting, if it ever gets priority.
 
 -->
+---
+layout: image-right
+#image: https://source.unsplash.com/1600x900/?automate
+image: https://images.unsplash.com/photo-1516192518150-0d8fee5425e3?fit=crop&h=900&w=800
 ---
 
 # Automate migrations
 
 - More fun to work with
-- Increased performance
+
 - Adopted with ease
+
+- Make old feel like new again
+
+- JVM & language improvements
 
 <!--
 I want to show you how easy it can be to perform major migrations,
@@ -67,7 +80,9 @@ such that you too can adopt all the latest language & framework features.
 And it can be fun, to pick up new language features such as records and text blocks.
 But you don't want to adopt these features manually, or only on a single project.
 
-Instead, we will look into automation, to make old projects feel like new again.
+Instead we will look into automation,
+to make old projects feel like new again,
+to benefit from JVM & language improvements.
 -->
 
 ---
@@ -75,20 +90,19 @@ layout: two-cols
 ---
 
 # Types of migrations
+<nbsp/>
 
-Java 8 -> 11 -> 17 -> ...
+- Java 8 → 11 → 17+
 
-Spring Boot 1.x -> 2.x -> 3.x
+- Spring Boot 1.x → 2.x → 3.x
 
-JUnit 4 -> JUnit Jupiter -> AssertJ
+- JUnit 4 → JUnit Jupiter → AssertJ
 
-Log4j 1.x to SLF4J 1.x
+- Log4j → SLF4J
 
-Javax -> Jakarta
+- Javax → Jakarta
 
-Zip Slip -> Log4Shell -> Spring4Shell -> ...
-
-
+- Zip Slip → Log4Shell → Spring4Shell → ...
 
 ::right::
 
@@ -113,9 +127,7 @@ Automation may be the only option, especially for large companies maintaining th
 ---
 layout: center
 ---
-
 ![OpenRewrite](/rewrite-logo.png)
-
 <!--
 So imagine my excitement last year, when I discovered OpenRewrite.
 OpenRewrite promises to make light work of all such migrations.
@@ -128,15 +140,25 @@ In this talk I’ll tell you all about OpenRewrite; how it came about; how it wo
 Finally we’ll look briefly at who is developing these recipes and how to apply them to Open Source projects.
 -->
 ---
+layout: two-cols
+---
 
 # Origin
 
 - Internal logging framework → SLF4J
+
 - Perfect transformation required
+
 - Abstract Syntax Tree parser & manipulation
+
 - Produce minimal changes
 
+::right::
+
 ![Netflix](/netflix-logo-2015.svg)
+
+<br/><br/><br/><br/>
+
 ![Netflix](/slf4j-logo.png)
 
 <!--
@@ -152,14 +174,22 @@ Next the migrated model is written out as close as possible to the original sour
 This way the applied changes are minimal, leaving surrounding code untouched.
 -->
 ---
+layout: image-right
+#image: https://source.unsplash.com/800x900/?arrow
+image: https://images.unsplash.com/photo-1518623001395-125242310d0c?fit=crop&h=900&w=800
+---
 
 # Broader application
 
-- Onboarding stalled
+- Spinnaker onboarding stalled
+
 - Struggle with outdated libraries & frameworks
-- Spring Boot 1.x → 2.x
-- JUnit 4 → JUnit 5
-- Apache license 2.0
+
+  - Spring Boot 1.x → 2.x
+
+  - JUnit 4 → JUnit 5
+
+- Apache licensed
 
 <!--
 Later, the same developers moved on to work on Spinnaker.
@@ -179,14 +209,20 @@ to making all recipes available
 under the Apache licence for Open Source Software.
 -->
 ---
-layout: image-right
-image: tech-logos.png
+layout: two-cols
 ---
 
 # Early focus on JVM
+<nbsp/>
 
-- Search & transformation
-- Refactoring ecosystem
+
+Search & transformation
+
+Refactoring ecosystem
+
+::right::
+
+![Technologies](/tech-logos.png)
 
 <!--
 The initial focus for OpenRewrite is on Java Virtual Machine languages and surrounding technologies.
@@ -199,15 +235,19 @@ Ultimately, refactoring entire frameworks and platforms is supported,
 with recipes available for application frameworks such as Micronaut, Quarkus and Spring.
 -->
 ---
-layout: image-right
-image: /syntax-tree.png
+layout: two-cols
 ---
 
 # Abstract syntax tree
+<nbsp/>
 
 Type attribution
 
 Format preservation
+
+::right::
+
+![AST](/ast.png)
 
 <!--
 OpenRewrite is not the only parser capable of understanding and manipulating Java.
@@ -228,9 +268,13 @@ Their changes are minimally invasive, and guaranteed to work, in part due to the
 By manipulating the full Abstract Syntax Tree, OpenRewrite can far exceed simple search and replace operations.
 -->
 ---
-
+layout: cover
+background: 
+---
 
 # Recipes
+<nbsp/>
+
 Search & Refactor
 
 Composition
@@ -258,6 +302,7 @@ and alter dependencies & plugins.
 
 
 # Visitors
+<nbsp/>
 
 Match & modify elements
 
@@ -278,6 +323,7 @@ combining and applying existing recipes through a yaml description file.
 
 
 # Modules
+<nbsp/>
 
 Specific purpose
 
@@ -428,7 +474,7 @@ index f332257..1d5e072 100644
 -        petTypeFormatter.parse("Fish", Locale.ENGLISH);
 +    @Test
 +    void shouldThrowParseException() throws ParseException {
-+        assertThrows(ParseException.class, () -> {
++        assertThrows(ParseException.class, () → {
 +            Mockito.when(this.pets.findPetTypes()).thenReturn(makePetTypes());
 +            petTypeFormatter.parse("Fish", Locale.ENGLISH);
 +        });
@@ -479,38 +525,208 @@ This will update dependencies, properties, and deprecations from any older versi
 And it includes the JUnit 5 migration seen before, as well as any Spring specific test constructs.
 -->
 ---
+layout: image-left
+image: /petclinic.png
+---
 
+# PetClinic migration
+<nbsp/>
 
-# 
+Spring Boot 1.5 → 2.7
+
+Java 8 → Java 17
+
+JUnit 4 → JUnit 5
+
 
 <!--
+To show you just how easy it is to migrate a project, I’ve prepared a small demo.
+
+For this demo, we will upgrade an old Spring PetClinic branch from Spring Boot 1.5 on Java 8, all the way to Spring Boot 2 on Java 17.
+
+We will look at the commands and changes made in more detail along the way.
+-->
+---
+layout: section
+---
+
+# Demo
+<nbsp/>
+
+![Demonstration](https://images.unsplash.com/photo-1590962467161-2555c3b99cf9?crop=entropy&fit=crop&h=900&w=1600)
+
+---
+layout: image-right
+#image: https://source.unsplash.com/800x900/?tools
+image: https://images.unsplash.com/photo-1581166397057-235af2b3c6dd?crop=entropy&fit=crop&h=900&w=800
+---
+# Applications
+<nbsp/>
+
+Migrate
+
+Fix
+
+Enforce
+
+
+<!--
+Now that we have seen how OpenRewrite works,
+Let’s have a look at what you can do with it.
+
+Obviously by now we have seen that it is well suited to migrations.
+You have mostly seen migrations from one version to another.
+But you can also migrate from one framework to another.
+
+If you want to switch from Log4J to SLF4J, you can.
+Same thing for switching between JUnit and AssertJ.
+And even larger migrations are in development.
+
+Another application is fixing static analysis findings.
+A large collection of CheckStyle, Sonar and Security findings are supported,
+to allow you to reduce your technical debt in minutes.
+
+Finally there is a whole class of recipes to enforce code style.
+Rather than merely apply a formatter, these style recipes go a step further to actually change your code.
+This ensures your code style reads consistently from project to project.
+
+And in addition to what is already available, it’s fairly easy to add custom recipes specific to your projects.
+-->
+---
+layout: image-right
+#image: https://source.unsplash.com/800x900/?future
+image: https://images.unsplash.com/photo-1553152531-b98a2fc8d3bf?fit=crop&fm=jpg&h=900&w=800
+---
+
+# Future
+<nbsp/>
+
+Java 17+
+
+Kotlin
+
+Dataflow
+<!--
+So, now that we have seen how it works, and what it can do, let’s briefly look ahead at what is still to come.
+
+As you have seen, OpenRewrite has dedicated parsers for multiple languages already.
+But, as you can imagine, they have some catching up to do still.
+
+They are working on a parser for both Java 17 and Kotlin.
+Note that you are perfectly able to run on Java 17, but you can not yet migrate to any of the new language features.
+The interesting thing about Kotlin is going to be that Java migration recipes will just work, even though the languages look very different.
+
+Another subject they are working on is data flow analysis.
+This not only takes into account individual code statements,
+but also how data flows through an appliction.
+This will allow recipes to for instance add immutability or detailed security fixes.
+
+All three of these features are in active development.
+It is not yet clear when you can use any of this, but interesting developments nonetheless.
+
+-->
+---
+layout: center
+---
+
+![Numbers](/moderne.io-numbers.png)
+
+<!--
+As a last subject, I think it’s only fair to tell you a bit about the company behind OpenRewrite.
+As I said before, they have committed to making all recipes available Open Source.
+
+Their focus is on applying recipes at scale.
+
+Through Moderne, clients can discover code patterns across an entire organisation,
+and target these for transformation.
+-->
+---
+layout: two-cols
+---
+
+# public.moderne.io
+<nbsp/>
+
+![Recipes left](/moderne.io-left.png)
+
+::right::
+
+![Recipes right](/moderne.io-right.png)
+
+<!--
+And even if you’re not a paying customer,
+you can still use their web interface to browse available recipes,
+and even apply them to Open Source projects.
+
+This can be a great way to start contributing back to Open Source software.
+
+And if you find any migration steps are missing,
+OpenRewrite itself is very accepting of new contributions.
+
+The community plays a large role in the development of new recipes.
 -->
 ---
 
 
-# 
+# Where to learn more
+
+<img src="/rewrite-logo-only.png" width="60" display="inline"/> https://docs.openrewrite.org <br/>
+
+<logos-github-icon /> https://github.com/openrewrite <br/>
+
+<logos-spring-icon /> https://github.com/
+spring-projects-experimental/spring-boot-migrator <br/>
+
+<img src="/rewrite-logo-only.png" width="60" display="inline"/> https://public.moderne.io <br/>
+
+<logos-slack-icon /> https://RewriteOSS.slack.com <br/>
+
+
+<!--
+So with that, we are getting near the end of my presentation.
+Before I send you on your way, I want to recommend a few resources where you can learn more.
+
+There’s extensive documentation and tutorials available on OpenRewrite.
+
+Development is all on GitHub, with new suggestions picked up with surprising speed.
+And as we have already seen, it’s quite easy to contribute minor migration steps.
+
+If you want to try some Recipes quickly,
+on Open Source projects,
+have a look at public.moderne.io
+
+And if you have any questions, I’ve found the team behind OpenRewrite to be very friendly and responsive.
+-->
+---
+
+# _"This could have been a blogpost"_
+<nbsp/>
+
+![Blogpost](/blogpost.png)
+
+<!--
+And finally, if you would like to play around with the commands shown before,
+I’ve written a blogpost to accompany this presentation.
+
+The blogpost migrates an old Spring PetClinic branch from Spring Boot 1.5 on Java 8 to 2.x on Java 17.
+That way you can play around with the commands and see the changes made at every step.
+
+For your own projects, I recommend you start with the testing framework migrations.
+They are an easy way to gain confidence in the tool, and see what it can do for your projects.
+-->
+---
+layout: cover
+#background: https://source.unsplash.com/1600x900/?hand
+#background: https://images.unsplash.com/photo-1575966166821-94b4762fba05?h=900&w=1600
+background: https://images.unsplash.com/photo-1544535830-9df3f56fff6a?h=900&w=1600
+---
+# Questions
+
 
 <!--
 -->
 ---
-
-
-# 
-
-<!--
--->
----
-
-
-# 
-
-<!--
--->
----
-
-
-# 
-
-<!--
--->
+layout: image
+#image: https://source.unsplash.com/1600x900/?thanks
+image: https://images.unsplash.com/photo-1549032305-e816fabf0dd2?fit=crop&fm=jpg&h=900&w=1600
 ---
