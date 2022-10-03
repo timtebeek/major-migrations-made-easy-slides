@@ -678,30 +678,28 @@ The community plays a large role in the development of new recipes.
 
 <img src="/rewrite-logo-only.png" width="60" display="inline"/> https://docs.openrewrite.org
 
+<logos-github-icon class="text-5xl align-middle"/> https://github.com/openrewrite
+<br/>
+<br/>
+
+<logos-spring-icon class="text-5xl align-middle"/> https://github.com/spring-projects-experimental/spring-boot-migrator
+
 <img src="/moderne-logo-only.png" width="60" display="inline"/> https://public.moderne.io
 
-<logos-github-icon class="text-5xl"/> https://github.com/openrewrite
-<br/>
-<br/>
-
-<logos-spring-icon class="text-5xl"/> https://github.com/spring-projects-experimental/spring-boot-migrator
-<br/>
-<br/>
-
-<logos-slack-icon  class="text-5xl"/> https://RewriteOSS.slack.com
+<logos-slack-icon  class="text-5xl align-middle"/> https://RewriteOSS.slack.com
 
 <!--
 So with that, we are getting near the end of my presentation.
 Before I send you on your way, I want to recommend a few resources where you can learn more.
 
-If you want to try some Recipes quickly,
-on Open Source projects,
-have a look at public.moderne.io
-
 There’s extensive documentation and tutorials available on OpenRewrite.
 
 Development is all on GitHub, with new suggestions picked up with surprising speed.
 And as we have already seen, it’s quite easy to contribute minor migration steps.
+
+If you want to try some Recipes quickly,
+on Open Source projects,
+have a look at public.moderne.io
 
 And if you have any questions, I’ve found the team behind OpenRewrite to be very friendly and responsive.
 -->
