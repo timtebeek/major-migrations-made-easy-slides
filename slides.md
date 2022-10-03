@@ -37,11 +37,13 @@ image: https://images.unsplash.com/photo-1615053835081-4218b100dae9?h=900&w=800
 # ~~Java Consultant~~
 # Time traveler
 
-- Migrate outdated technology
+## Migrate outdated technology
+<br/>
 
-- Switch assignments often
+## Switch assignments often
+<br/>
 
-- Focus on JVM & Automation
+## Focus on JVM & Automation
 
 <!--
 Now as a consultant, I often switch assignments,
@@ -726,8 +728,21 @@ If you have any questions feel free to reach out either in person or online.
 ---
 layout: image
 #image: https://source.unsplash.com/1600x900/?thanks
-image: https://images.unsplash.com/photo-1549032305-e816fabf0dd2?fit=crop&fm=jpg&h=900&w=1600
+image: https://images.unsplash.com/photo-1608363808030-f58d9f02b06a?fit=crop&fm=jpg&h=900&w=1600
 ---
+<div></div>
 <!--
 And with that; I'd like to thank you all for your attention!
 -->
+
+---
+layout: end
+---
+
+---
+# Spring Boot 1.5 to 2.x command
+
+```diff
+
+```
+
