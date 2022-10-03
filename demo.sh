@@ -84,7 +84,6 @@ echo '# Our tests have also been migrated to JUnit 5.
 wrap git --no-pager diff src/test/java/org/springframework/samples/petclinic/owner/PetTypeFormatterTests.java
 
 
-clear
 echo '# Satisfied with our changes, we commit the results.'
 wrap git commit -a -m "Spring Boot 2.7 on Java 8"
 
