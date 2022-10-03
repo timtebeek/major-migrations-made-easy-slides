@@ -90,7 +90,6 @@ layout: two-cols
 ---
 
 # Types of migrations
-<nbsp/>
 
 - Java 8 → 11 → 17+
 
@@ -213,12 +212,12 @@ layout: two-cols
 ---
 
 # Early focus on JVM
-<nbsp/>
+<br/>
 
+## Search & transformation
+<br/>
 
-Search & transformation
-
-Refactoring ecosystem
+## Refactoring ecosystem
 
 ::right::
 
@@ -239,11 +238,12 @@ layout: two-cols
 ---
 
 # Abstract syntax tree
-<nbsp/>
+<br/>
 
-Type attribution
+## Type attribution
+<br/>
 
-Format preservation
+## Format preservation
 
 ::right::
 
@@ -274,11 +274,12 @@ background: /lego-blocks.png
 ---
 
 # Recipes
-<nbsp/>
+<br/>
 
-Search & Refactor
+## Search & Refactor
+<br/>
 
-Composition
+## Composition
 
 <!--
 With the full abstract syntax tree built, we need to instruct OpenRewrite what operations to apply, where in your code.
@@ -305,9 +306,9 @@ image: /visitor.png
 ---
 
 # Visitors
-<nbsp/>
+<br/>
 
-Match & modify elements
+## Match & modify elements
 
 <!--
 Individual recipes are implemented as Java visitors
@@ -328,11 +329,12 @@ background: /lego-truck.png
 ---
 
 # Modules
-<nbsp/>
+<br/>
 
-Specific purpose
+## Specific purpose
+<br/>
 
-Complete migrations
+## Complete migrations
 
 <!--
 Modules combine and group together these fine grained recipes,
@@ -354,7 +356,7 @@ is what sets OpenRewrite apart from other similar tools, such as Google ErrorPro
 
 # JUnit 5 recipe
 
-```yaml {1-6}
+```yaml {1-6|7-}
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.junit5.JUnit4to5Migration
 recipeList:
@@ -379,31 +381,11 @@ You likely know a couple of the steps already.
 
 Among others you would have to
 - update the test annotations
--->
----
-
-# JUnit 5 recipe
-
-```yaml {7-}
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.testing.junit5.JUnit4to5Migration
-recipeList:
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: org.junit.Test
-      newFullyQualifiedTypeName: org.junit.jupiter.api.Test
-  - org.openrewrite.java.testing.junit5.UpdateBeforeAfterAnnotations
-  - org.openrewrite.java.testing.junit5.AssertToAssertions
-  - org.openrewrite.java.testing.junit5.StaticImports
-  - org.openrewrite.java.testing.junit5.ExpectedExceptionToAssertThrows
-  - …
-```
-
-<!--
-But you would also have to 
-- update the assertions, and sometimes argument order
-- update all imports
-- update any test rules
-- and that’s just getting started
+- But you would also have to 
+  - update the assertions, and sometimes argument order
+  - update all imports
+  - update any test rules
+  - and that’s just getting started
 
 Notice how each step is reflected as a separate Recipe in this YAML configuration file.
 
@@ -540,13 +522,15 @@ image: /petclinic.png
 ---
 
 # PetClinic migration
-<nbsp/>
+<br/>
 
-Spring Boot 1.5 → 2.7
+## Spring Boot 1.5 → 2.7
+<br/>
 
-Java 8 → Java 17
+## Java 8 → Java 17
+<br/>
 
-JUnit 4 → JUnit 5
+## JUnit 4 → JUnit 5
 
 
 <!--
@@ -561,7 +545,6 @@ layout: section
 ---
 
 # Demo
-<nbsp/>
 
 ![Demonstration](https://images.unsplash.com/photo-1590962467161-2555c3b99cf9?crop=entropy&fit=crop&h=900&w=1600)
 
@@ -571,13 +554,15 @@ layout: image-right
 image: https://images.unsplash.com/photo-1581166397057-235af2b3c6dd?crop=entropy&fit=crop&h=900&w=800
 ---
 # Applications
-<nbsp/>
+<br/>
 
-Migrate
+## Migrate
+<br/>
 
-Fix
+## Fix
+<br/>
 
-Enforce
+## Enforce
 
 
 <!--
@@ -609,13 +594,15 @@ image: https://images.unsplash.com/photo-1553152531-b98a2fc8d3bf?fit=crop&fm=jpg
 ---
 
 # Future
-<nbsp/>
+<br/>
 
-Java 17+
+## Java 17+
+<br/>
 
-Kotlin
+## Kotlin
+<br/>
 
-Dataflow
+## Dataflow
 <!--
 So, now that we have seen how it works, and what it can do, let’s briefly look ahead at what is still to come.
 
@@ -655,7 +642,7 @@ layout: two-cols
 ---
 
 # public.moderne.io
-<nbsp/>
+<div></div>
 
 ![Recipes left](/moderne.io-left.png)
 
@@ -679,7 +666,7 @@ The community plays a large role in the development of new recipes.
 
 
 # Where to learn more
-<nbsp/>
+<div></div>
 
 <img src="/rewrite-logo-only.png" width="60" display="inline"/> https://docs.openrewrite.org
 
@@ -733,11 +720,14 @@ background: https://images.unsplash.com/photo-1544535830-9df3f56fff6a?h=900&w=16
 ---
 # Questions
 
-
 <!--
+If you have any questions feel free to reach out either in person or online.
 -->
 ---
 layout: image
 #image: https://source.unsplash.com/1600x900/?thanks
 image: https://images.unsplash.com/photo-1549032305-e816fabf0dd2?fit=crop&fm=jpg&h=900&w=1600
 ---
+<!--
+And with that; I'd like to thank you all for your attention!
+-->
