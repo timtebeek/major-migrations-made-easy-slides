@@ -1,6 +1,9 @@
-# Welcome to [Slidev](https://github.com/slidevjs/slidev)!
+# "Major migrations made easy" slides
 
-To start the slide show:
+Deployed to GitHub Pages at:  
+https://timtebeek.github.io/major-migrations-made-easy-slides/
+
+To start the slide show locally:
 
 - `npm install`
 - `npm run dev`
