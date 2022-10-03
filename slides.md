@@ -82,7 +82,7 @@ But you don't want to adopt these features manually, or only on a single project
 
 Instead we will look into automation,
 to make old projects feel like new again,
-to benefit from JVM & language improvements.
+to benefit from JVM,  language and framework improvements.
 -->
 
 ---
@@ -292,13 +292,13 @@ that can be combined for common migration steps.
 
 You can think of these as lego building blocks, ready to be applied with the proper parameters.
 There are hundreds of these building blocks to for instance:
-change types
-change methods
-change arguments
-manipulate properties
-and alter dependencies & plugins.
-
+- change types
+- change methods
+- change arguments
+- manipulate properties
+- and alter dependencies & plugins.
 -->
+
 ---
 layout: image-right
 image: /visitor.png
@@ -338,12 +338,17 @@ Complete migrations
 Modules combine and group together these fine grained recipes,
 into more coarse grained, application specific recipes.
 
-There are modules for example for logging frameworks, testing frameworks and application frameworks such as Spring.
+There are modules for example for 
+- logging frameworks, 
+- testing frameworks 
+- and application frameworks such as Spring.
+
 Think of these as lego sets, with build plans for common migrations and fixes, ready to be used.
 
 In my opinion, the Abstract Syntax Tree, combined with the large collection of Open Source recipes,
 is what sets OpenRewrite apart from other similar tools, such as Google ErrorProne’s Refaster.
 -->
+
 ---
 
 
@@ -377,7 +382,6 @@ Among others you would have to
 -->
 ---
 
-
 # JUnit 5 recipe
 
 ```yaml {7-}
@@ -399,7 +403,7 @@ But you would also have to
 - update the assertions, and sometimes argument order
 - update all imports
 - update any test rules
-and that’s just getting started
+- and that’s just getting started
 
 Notice how each step is reflected as a separate Recipe in this YAML configuration file.
 
@@ -410,6 +414,7 @@ a dedicated Java visitor that changes the abstract syntax tree.
 
 All these steps combine to achieve a complete JUnit 5 migration.
 -->
+
 ---
 layout: statement
 ---
