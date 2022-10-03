@@ -71,21 +71,28 @@ echo '# Our application.properties have also been updated.
 # - Database initialization properties have been moved.
 # - Actuator properties have also undergone changes.'
 wrap git --no-pager diff src/main/resources/
+
+
 clear
 echo '# Our pom.xml file now contains updated plugins and dependencies'
 wrap git --no-pager diff pom.xml
-clear
-echo '# Our tests have also been migrated to JUnit 5.
+
+
+echo '# Our tests have also been migrated to JUnit 5,
+# with similar changes to what we have seen before.
+'
+#clear
+#echo '# Our tests have also been migrated to JUnit 5.
 # - Our imports have been converted as you would expect.
 # - Notice how Mockito now uses the extension.
 # - Our test life cycle annotations have been converted.
 # - Visibility modifiers are only removed where applicable.
 # - Expected exceptions have been converted into assertThrows.'
-wrap git --no-pager diff src/test/java/org/springframework/samples/petclinic/owner/PetTypeFormatterTests.java
+#wrap git --no-pager diff src/test/java/org/springframework/samples/petclinic/owner/PetTypeFormatterTests.java
 
 
 echo '# Satisfied with our changes, we commit the results.'
-wrap git commit -a -m "Spring Boot 2.7 on Java 8"
+wrap git commit -a -m "Spring Boot 2.5 on Java 8"
 
 
 clear
@@ -110,7 +117,7 @@ echo '# Individually, these might be simple changes.
 # We update our JDK to now use Java 11'
 wrap sdk use java 11.0.16-tem
 echo '# And we again commit the results'
-wrap git commit -a -m "Spring Boot 2.7 on Java 11"
+wrap git commit -a -m "Spring Boot 2.5 on Java 11"
 
 
 
@@ -128,14 +135,15 @@ org.openrewrite.recipe:rewrite-migrate-java:1.11.0 \
 org.openrewrite.java.migrate.JavaVersion17
 echo '# The change is minimal
 '
-git --no-pager diff pom.xml
+git --no-pager diff pom.xml | head -n 20
+exit
 echo '
 # We update our JDK to now use Java 17'
 wrap sdk use java 17.0.4-tem
 
 echo '
 # And with a final commit, we complete the migration.'
-wrap git commit -a -m "Spring Boot 2.7 on Java 17"
+wrap git commit -a -m "Spring Boot 2.5 on Java 17"
 
 clear
 echo '# Now finally, we run Maven verify to see how we did on the migration.
