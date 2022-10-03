@@ -59,8 +59,8 @@ And migrating all of that by hand can seem daunting, if it ever gets priority.
 
 ---
 layout: image-right
-#image: https://source.unsplash.com/1600x900/?automate
-image: https://images.unsplash.com/photo-1516192518150-0d8fee5425e3?fit=crop&h=900&w=800
+image: >-
+  https://images.unsplash.com/photo-1516192518150-0d8fee5425e3?fit=crop&h=900&w=800
 ---
 
 # Automate migrations
@@ -74,8 +74,8 @@ image: https://images.unsplash.com/photo-1516192518150-0d8fee5425e3?fit=crop&h=9
 - JVM & language improvements
 
 <!--
-I want to show you how easy it can be to perform major migrations,
-such that you too can adopt all the latest language & framework features.
+I want to show you how easy it can be to perform major migrations.
+That way, you too can adopt all the latest language & framework features.
 
 And it can be fun, to pick up new language features such as records and text blocks.
 But you don't want to adopt these features manually, or only on a single project.
