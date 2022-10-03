@@ -50,12 +50,15 @@ Now as a consultant, I often switch assignments,
 and whenever I do, I feel a bit like a time traveler.
 
 One moment I'm working with Java 17 and all the latest frameworks & technologies.
+
 And then the next, I'm thrown ten years back in time, to Java 7 or 8 and outdated frameworks.
+
 My assignments typically see me bring these outdated technology stacks, back up to date.
 
 And perhaps you face the same challenges as I do;
-at a conference like this you hear all about new framework & language features,
-yet back at work, you're stuck using Java 8 and JUnit 4.
+at a conference like this you hear all about new framework & language features.
+
+Yet back at work, you're stuck using Java 8 and JUnit 4.
 And migrating all of that by hand can seem daunting, if it ever gets priority.
 -->
 
@@ -128,7 +131,9 @@ Automation may be the only option, especially for large companies maintaining th
 ---
 layout: center
 ---
+
 ![OpenRewrite](/rewrite-logo.png)
+
 <!--
 So imagine my excitement last year, when I discovered OpenRewrite.
 OpenRewrite promises to make light work of all such migrations.
@@ -136,10 +141,14 @@ OpenRewrite promises to make light work of all such migrations.
 With a simple command, you can now upgrade between versions of Java and Spring.
 You can even migrate between frameworks, such as from JUnit to AssertJ, and even from Java EE to Spring.
 
-In this talk I’ll tell you all about OpenRewrite; how it came about; how it works, and what you can do with it.
+In this talk I’ll tell you all about OpenRewrite;
+- how it came about;
+- how it works,
+- and what you can do with it.
 
 Finally we’ll look briefly at who is developing these recipes and how to apply them to Open Source projects.
 -->
+
 ---
 layout: two-cols
 ---
@@ -665,7 +674,8 @@ OpenRewrite itself is very accepting of new contributions.
 The community plays a large role in the development of new recipes.
 -->
 ---
-
+class: text-4xl
+---
 
 # Where to learn more
 <div></div>
@@ -673,10 +683,12 @@ The community plays a large role in the development of new recipes.
 <img src="/rewrite-logo-only.png" width="60" display="inline"/> https://docs.openrewrite.org
 
 <logos-github-icon class="text-5xl align-middle"/> https://github.com/openrewrite
-<br/>
-<br/>
 
+<!--
+<br/>
+<br/>
 <logos-spring-icon class="text-5xl align-middle"/> https://github.com/spring-projects-experimental/spring-boot-migrator
+-->
 
 <img src="/moderne-logo-only.png" width="60" display="inline"/> https://public.moderne.io
 
@@ -745,4 +757,3 @@ layout: end
 ```diff
 
 ```
-
