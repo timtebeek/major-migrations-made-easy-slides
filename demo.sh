@@ -136,7 +136,6 @@ org.openrewrite.java.migrate.JavaVersion17
 echo '# The change is minimal
 '
 git --no-pager diff pom.xml | head -n 20
-exit
 echo '
 # We update our JDK to now use Java 17'
 wrap sdk use java 17.0.4-tem
