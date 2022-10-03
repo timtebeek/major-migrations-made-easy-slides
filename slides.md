@@ -708,7 +708,7 @@ And if you have any questions, I’ve found the team behind OpenRewrite to be ve
 And finally, if you would like to play around with the commands shown before,
 I’ve written a blogpost to accompany this presentation.
 
-The blogpost migrates an old Spring PetClinic branch from Spring Boot 1.5 on Java 8 to 2.x on Java 17.
+The blogpost migrates the same old Spring PetClinic branch.
 That way you can play around with the commands and see the changes made at every step.
 
 For your own projects, I recommend you start with the testing framework migrations.
