@@ -281,7 +281,7 @@ By manipulating the full Abstract Syntax Tree, OpenRewrite can far exceed simple
 ---
 # https://duotone.shapefactory.co/?f=e17d00&t=193569&q=lego%20house
 layout: cover
-background: /lego-blocks.png
+background: https://images.unsplash.com/photo-1560961911-ba7ef651a56c?fit=crop&h=900&w=800
 ---
 
 # Recipes
@@ -313,7 +313,7 @@ There are hundreds of these building blocks to for instance:
 
 ---
 layout: image-right
-image: /visitor.png
+image: https://images.unsplash.com/photo-1533557213878-99cda20b1400?fit=crop&h=900&w=800
 ---
 
 # Visitors
@@ -336,7 +336,7 @@ combining and applying existing recipes through a yaml description file.
 -->
 ---
 layout: cover
-background: /lego-truck.png
+background: https://images.unsplash.com/photo-1663173775686-d1529e901713?fit=crop&h=900&w=800
 ---
 
 # Modules
