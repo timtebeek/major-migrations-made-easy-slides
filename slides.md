@@ -694,19 +694,17 @@ class: text-4xl
 # Where to learn more
 <div></div>
 
-<img src="/rewrite-logo-only.png" width="60" display="inline"/> https://docs.openrewrite.org
+<img src="/rewrite-logo-only.png" width="60" display="inline"/> docs.openrewrite.org
 
-<logos-github-icon class="text-5xl align-middle"/> https://github.com/openrewrite
+<logos-github-icon class="text-5xl align-middle"/> github.com/openrewrite
 
-<!--
 <br/>
 <br/>
-<logos-spring-icon class="text-5xl align-middle"/> https://github.com/spring-projects-experimental/spring-boot-migrator
--->
+<logos-spring-icon class="text-5xl align-middle"/> github.com/spring-projects-experimental/spring-boot-migrator
 
-<img src="/moderne-logo-only.png" width="60" display="inline"/> https://public.moderne.io
+<img src="/moderne-logo-only.png" width="60" display="inline"/> public.moderne.io
 
-<logos-slack-icon  class="text-5xl align-middle"/> https://RewriteOSS.slack.com
+<logos-slack-icon  class="text-5xl align-middle"/> RewriteOSS.slack.com
 
 <!--
 So with that, we are getting near the end of my presentation.
@@ -742,25 +740,28 @@ They are an easy way to gain confidence in the tool, and see what it can do for 
 -->
 ---
 layout: cover
-#background: https://source.unsplash.com/1600x900/?hand
-#background: https://images.unsplash.com/photo-1575966166821-94b4762fba05?h=900&w=1600
 background: https://images.unsplash.com/photo-1544535830-9df3f56fff6a?h=900&w=1600
 ---
+
 # Questions
 
 <!--
-If you have any questions feel free to reach out either in person or online.
+And with that we get to my favorite part of any presentation.
+
+If you have any questions feel free raise your hand to ask them right now.
+
+Or reach out after this presentation either in person or online.
 -->
-
-
 
 ---
 layout: center
 ---
+
 ![Keep your dependencies in check](/keep-dependencies-in-check.png)
+
 <!--
 Now if you liked this presentation, there's another one I can recommend this Thursday.
-Marit has a very entertaining talk on tooling around keeping your dependencies in check.
+Marit has a very entertaining talk on tooling to keep your dependencies in check.
 -->
 
 ---
@@ -836,4 +837,3 @@ src: ./demo/commit-java-17.md
 ---
 src: ./demo/mvn-verify.md
 ---
-
