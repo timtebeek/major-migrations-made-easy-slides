@@ -706,6 +706,8 @@ class: text-4xl
 
 <logos-slack-icon  class="text-5xl align-middle"/> RewriteOSS.slack.com
 
+<img src="/jdriven-logo.png" width="60" display="inline"/> blog.jdriven.com
+
 <!--
 So with that, we are getting near the end of my presentation.
 Before I send you on your way, I want to recommend a few resources where you can learn more.
