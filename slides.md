@@ -19,9 +19,12 @@ lineNumbers: true
 defaults:
   layout: 'default'
 
+# https://sli.dev/guide/faq.html#scale-the-canvas
+canvasWidth: 1280
+
 # Cover slide
 layout: image
-image: /cover-devoxx-ma.png
+image: /cover-devoxx-be.png
 ---
 <!--
 Hi all, and welcome to Major Migrations Made Easy.
@@ -328,12 +331,13 @@ and then modify
 elements of the abstract syntax tree.
 
 There are plenty of examples available,
-but note that you only need a Java visitor
+but note that you only need a dedicated Java visitor
 when none of the existing recipes can already achieve your goals.
 
 Typically, you can get very far only configuring,
 combining and applying existing recipes through a yaml description file.
 -->
+
 ---
 layout: cover
 background: https://images.unsplash.com/photo-1663173775686-d1529e901713?fit=crop&h=900&w=800
