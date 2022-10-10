@@ -607,8 +607,8 @@ And in addition to what is already available, it’s fairly easy to add custom r
 -->
 ---
 layout: image-right
-#image: https://source.unsplash.com/800x900/?future
-image: https://images.unsplash.com/photo-1553152531-b98a2fc8d3bf?fit=crop&fm=jpg&h=900&w=800
+image: >-
+  https://images.unsplash.com/photo-1553152531-b98a2fc8d3bf?fit=crop&fm=jpg&h=900&w=800
 ---
 
 # Future
@@ -632,7 +632,7 @@ As you have seen, OpenRewrite has dedicated parsers for multiple languages alrea
 But, as you can imagine, they have some catching up to do still.
 
 They are working on a parser for both Java 17 and Kotlin.
-Note that you are perfectly able to run on Java 17, but you can not yet migrate to any of the new language features.
+Note that you are perfectly able to run on Java 17, but you can not yet migrate to some of the new language features.
 The interesting thing about Kotlin is going to be that Java migration recipes will just work, even though the languages look very different.
 
 Another subject they are working on is data flow analysis.
@@ -648,8 +648,8 @@ which will be helpful when Spring Boot 3 arrives in November.
 All of these features are in active development.
 It is not yet clear when you can use any of this,
 but interesting developments nonetheless.
-
 -->
+
 ---
 layout: center
 ---
@@ -759,14 +759,21 @@ Or reach out after this presentation either in person or online.
 -->
 
 ---
-layout: center
+layout: two-cols
 ---
 
-![Keep your dependencies in check](/keep-dependencies-in-check.png)
+<img src="/keep-dependencies-in-check.png" width="400"/>
+
+::right::
+
+<img src="/streamlining-error-prone.png" width="400"/>
 
 <!--
-Now if you liked this presentation, there's another one I can recommend this Thursday.
+Now if you liked this presentation, there's another two I can recommend this Thursday.
+
 Marit has a very entertaining talk on tooling to keep your dependencies in check.
+
+And there's another one from Sander Mak on ErrorProne that should be interesting.
 -->
 
 ---
