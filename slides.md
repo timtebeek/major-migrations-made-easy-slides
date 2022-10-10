@@ -618,6 +618,10 @@ image: https://images.unsplash.com/photo-1553152531-b98a2fc8d3bf?fit=crop&fm=jpg
 <br/>
 
 ## Dataflow
+<br/>
+
+## Spring Boot Migrator
+
 <!--
 So, now that we have seen how it works, and what it can do, let’s briefly look ahead at what is still to come.
 
@@ -633,8 +637,14 @@ This not only takes into account individual code statements,
 but also how data flows through an appliction.
 This will allow recipes to for instance add immutability or detailed security fixes.
 
-All three of these features are in active development.
-It is not yet clear when you can use any of this, but interesting developments nonetheless.
+Another interesting development, is the Spring Boot Migrator project from VMWare.
+It builds upon OpenRewrite, to migrate projects towards Spring from other frameworks.
+It takes a slightly different, more interactive approach,
+which will be helpful when Spring Boot 3 arrives in November.
+
+All of these features are in active development.
+It is not yet clear when you can use any of this,
+but interesting developments nonetheless.
 
 -->
 ---
@@ -756,8 +766,62 @@ layout: end
 ---
 
 ---
-# Spring Boot 1.5 to 2.x command
+src: ./demo/checkout.md
+---
+---
+src: ./demo/sdkman-java-8.md
+---
+---
+src: ./demo/maven-wrapper.md
+---
+---
+src: ./demo/commit-1.5-java-8.md
+---
+---
+src: ./demo/migrate-spring-boot.md
+---
+---
+src: ./demo/notice-changes.md
+---
+---
+src: ./demo/hibernate-validator.md
+---
+---
+src: ./demo/unnecessary-autowired.md
+---
+---
+src: ./demo/webparameter-arguments.md
+---
+---
+src: ./demo/application-properties.md
+---
+---
+src: ./demo/pom-2.5.md
+---
+---
+src: ./demo/commit-2.5.md
+---
 
-```diff
+---
+src: ./demo/migrate-java-11.md
+---
+---
+src: ./demo/changes-java-11.md
+---
+---
+src: ./demo/commit-java-11.md
+---
 
-```
+---
+src: ./demo/migrate-java-17.md
+---
+---
+src: ./demo/changes-java-17.md
+---
+---
+src: ./demo/commit-java-17.md
+---
+---
+src: ./demo/mvn-verify.md
+---
+
