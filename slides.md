@@ -751,6 +751,18 @@ background: https://images.unsplash.com/photo-1544535830-9df3f56fff6a?h=900&w=16
 <!--
 If you have any questions feel free to reach out either in person or online.
 -->
+
+
+
+---
+layout: center
+---
+![Keep your dependencies in check](/keep-dependencies-in-check.png)
+<!--
+Now if you liked this presentation, there's another one I can recommend this Thursday.
+Marit has a very entertaining talk on tooling around keeping your dependencies in check.
+-->
+
 ---
 layout: image
 #image: https://source.unsplash.com/1600x900/?thanks
