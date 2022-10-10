@@ -105,9 +105,9 @@ org.openrewrite.recipe:rewrite-migrate-java:1.11.0 \
 org.openrewrite.java.migrate.Java8toJava11
 
 echo '# - The compiler source and target versions are updated.
-# - Wro4j has been upgraded to be compatible.
 # - Dependencies have been added for jaxb.
-# - Cobertura has been dropped, as it is uncompatible.'
+# - Wro4j has been upgraded to be compatible.
+# - Cobertura has been dropped, as it is incompatible.'
 wrap git --no-pager diff pom.xml
 
 echo '# Individually, these might be simple changes.

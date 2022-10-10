@@ -1,10 +1,10 @@
 # The compiler source and target versions are updated.
 
-## Wro4j has been upgraded to be compatible.
-
 ## Dependencies have been added for jaxb.
 
-## Cobertura has been dropped, as it is uncompatible.
+## Wro4j has been upgraded to be compatible.
+
+## Cobertura has been dropped, as it is incompatible.
 
 ```shell
 $ git --no-pager diff pom.xml

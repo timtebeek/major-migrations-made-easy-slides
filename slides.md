@@ -73,13 +73,16 @@ image: >-
 
 # Automate migrations
 
-- More fun to work with
+### More fun to work with
+<br/>
 
-- Adopted with ease
+### Adopted with ease
+<br/>
 
-- Make old feel like new again
+### Make old feel like new again
+<br/>
 
-- JVM & language improvements
+### JVM & language improvements
 
 <!--
 I want to show you how easy it can be to perform major migrations.
@@ -89,8 +92,8 @@ And it can be fun, to pick up new language features such as records and text blo
 But you don't want to adopt these features manually, or only on a single project.
 
 Instead we will look into automation,
-to make old projects feel like new again,
-to benefit from JVM,  language and framework improvements.
+to make old projects FEEL like new again.
+So you can benefit from JVM,  language and framework improvements.
 -->
 
 ---
