@@ -24,7 +24,13 @@ canvasWidth: 1280
 
 # Cover slide
 layout: image
-image: /cover-devoxx-be.png
+image: /cover-baselone.png
+---
+
+---
+# Title slide
+layout: image
+image: /title-baselone.png
 ---
 <!--
 Hi all, and welcome to Major Migrations Made Easy.
@@ -759,24 +765,6 @@ Or reach out after this presentation either in person or online.
 -->
 
 ---
-layout: two-cols
----
-
-<img src="/keep-dependencies-in-check.png" width="400"/>
-
-::right::
-
-<img src="/streamlining-error-prone.png" width="400"/>
-
-<!--
-Now if you liked this presentation, there's another two I can recommend this Thursday.
-
-Marit has a very entertaining talk on tooling to keep your dependencies in check.
-
-And there's another one from Sander Mak on ErrorProne that should be interesting.
--->
-
----
 layout: image
 #image: https://source.unsplash.com/1600x900/?thanks
 image: https://images.unsplash.com/photo-1608363808030-f58d9f02b06a?fit=crop&fm=jpg&h=900&w=1600
@@ -786,6 +774,10 @@ image: https://images.unsplash.com/photo-1608363808030-f58d9f02b06a?fit=crop&fm=
 And with that; I'd like to thank you all for your attention!
 -->
 
+---
+layout: image
+image: /cover-baselone.png
+---
 ---
 layout: end
 ---
