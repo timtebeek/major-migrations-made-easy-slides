@@ -26,6 +26,11 @@ git clean -f
 git checkout main
 ! git branch -D openrewrite-migration-demo
 git switch -c openrewrite-migration-demo 1.5.x
+git log -n 1
+echo '
+# You can see the last commit was in 2017'
+read -p ""
+
 
 echo '
 # Next we ensure we are running Java 8 for now.'
@@ -64,6 +69,8 @@ wrap git --no-pager diff src/main/java/org/springframework/samples/petclinic/vet
 
 echo '# - and web parameter arguments have also been removed.'
 wrap git --no-pager diff src/main/java/org/springframework/samples/petclinic/owner/PetController.java
+
+wrap echo '# These types of changes will make your application FEEL more recent'
 
 
 clear

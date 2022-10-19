@@ -27,14 +27,24 @@ layout: image
 image: /cover-baselone.png
 ---
 
+
+
+<!--
+Hi everyone!
+
+First off I'd like to thank the organizers and sponsors of BaselOne for having me.
+
+I'm excited to be here to present Major Migrations Made Easy.
+-->
+
 ---
-# Title slide
 layout: image
 image: /title-baselone.png
 ---
-<!--
-Hi all, and welcome to Major Migrations Made Easy.
 
+
+
+<!--
 My name is Tim te Beek, and I'm a Java consultant at JDriven, in the Netherlands.
 -->
 
@@ -637,7 +647,7 @@ So, now that we have seen how it works, and what it can do, let’s briefly look
 As you have seen, OpenRewrite has dedicated parsers for multiple languages already.
 But, as you can imagine, they have some catching up to do still.
 
-They are working on a parser for both Java 17 and Kotlin.
+They are working on a parser for both Java 17+ and Kotlin.
 Note that you are perfectly able to run on Java 17, but you can not yet migrate to some of the new language features.
 The interesting thing about Kotlin is going to be that Java migration recipes will just work, even though the languages look very different.
 
