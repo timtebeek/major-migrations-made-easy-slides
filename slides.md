@@ -24,11 +24,27 @@ canvasWidth: 1280
 
 # Cover slide
 layout: image
-image: /cover-devoxx-be.png
+image: /cover-baselone.png
 ---
-<!--
-Hi all, and welcome to Major Migrations Made Easy.
 
+
+
+<!--
+Hi everyone!
+
+First off I'd like to thank the organizers and sponsors of BaselOne for having me.
+
+I'm excited to be here to present Major Migrations Made Easy.
+-->
+
+---
+layout: image
+image: /title-baselone.png
+---
+
+
+
+<!--
 My name is Tim te Beek, and I'm a Java consultant at JDriven, in the Netherlands.
 -->
 
@@ -631,7 +647,7 @@ So, now that we have seen how it works, and what it can do, let’s briefly look
 As you have seen, OpenRewrite has dedicated parsers for multiple languages already.
 But, as you can imagine, they have some catching up to do still.
 
-They are working on a parser for both Java 17 and Kotlin.
+They are working on a parser for both Java 17+ and Kotlin.
 Note that you are perfectly able to run on Java 17, but you can not yet migrate to some of the new language features.
 The interesting thing about Kotlin is going to be that Java migration recipes will just work, even though the languages look very different.
 
@@ -759,24 +775,6 @@ Or reach out after this presentation either in person or online.
 -->
 
 ---
-layout: two-cols
----
-
-<img src="/keep-dependencies-in-check.png" width="400"/>
-
-::right::
-
-<img src="/streamlining-error-prone.png" width="400"/>
-
-<!--
-Now if you liked this presentation, there's another two I can recommend this Thursday.
-
-Marit has a very entertaining talk on tooling to keep your dependencies in check.
-
-And there's another one from Sander Mak on ErrorProne that should be interesting.
--->
-
----
 layout: image
 #image: https://source.unsplash.com/1600x900/?thanks
 image: https://images.unsplash.com/photo-1608363808030-f58d9f02b06a?fit=crop&fm=jpg&h=900&w=1600
@@ -786,6 +784,10 @@ image: https://images.unsplash.com/photo-1608363808030-f58d9f02b06a?fit=crop&fm=
 And with that; I'd like to thank you all for your attention!
 -->
 
+---
+layout: image
+image: /cover-baselone.png
+---
 ---
 layout: end
 ---

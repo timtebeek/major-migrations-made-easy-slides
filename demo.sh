@@ -26,6 +26,11 @@ git clean -f
 git checkout main
 ! git branch -D openrewrite-migration-demo
 git switch -c openrewrite-migration-demo 1.5.x
+git log -n 1
+echo '
+# You can see the last commit was in 2017'
+read -p ""
+
 
 echo '
 # Next we ensure we are running Java 8 for now.'
@@ -44,9 +49,9 @@ clear
 echo '# We will migrate the Spring PetClinic to Spring Boot 2.
 # These recipes are in the added Rewrite Spring Module.
 '
-wrap ./mvnw org.openrewrite.maven:rewrite-maven-plugin:4.34.0:run \
+wrap ./mvnw org.openrewrite.maven:rewrite-maven-plugin:4.35.1:run \
   -Drewrite.recipeArtifactCoordinates=\
-org.openrewrite.recipe:rewrite-spring:4.26.0 \
+org.openrewrite.recipe:rewrite-spring:4.28.0 \
   -DactiveRecipes=\
 org.openrewrite.java.spring.boot2.SpringBoot1To2Migration
 
@@ -64,6 +69,8 @@ wrap git --no-pager diff src/main/java/org/springframework/samples/petclinic/vet
 
 echo '# - and web parameter arguments have also been removed.'
 wrap git --no-pager diff src/main/java/org/springframework/samples/petclinic/owner/PetController.java
+
+wrap echo '# These types of changes will make your application FEEL more recent'
 
 
 clear
@@ -92,57 +99,37 @@ echo '# Our tests have also been migrated to JUnit 5,
 
 
 echo '# Satisfied with our changes, we commit the results.'
-wrap git commit -a -m "Spring Boot 2.5 on Java 8"
-
-
-clear
-echo '# Next we will upgrade to Java 11 using a different module.
-# The Migrate Java module contains recipes to adopt new language features.'
-wrap ./mvnw org.openrewrite.maven:rewrite-maven-plugin:4.34.0:run \
-  -Drewrite.recipeArtifactCoordinates=\
-org.openrewrite.recipe:rewrite-migrate-java:1.11.0 \
-  -DactiveRecipes=\
-org.openrewrite.java.migrate.Java8toJava11
-
-echo '# - The compiler source and target versions are updated.
-# - Dependencies have been added for jaxb.
-# - Wro4j has been upgraded to be compatible.
-# - Cobertura has been dropped, as it is incompatible.'
-wrap git --no-pager diff pom.xml
-
-echo '# Individually, these might be simple changes.
-# But by automating these changes, we can run them at scale,
-# to upgrade our entire application landscape in minutes.
-
-# We update our JDK to now use Java 11'
-wrap sdk use java 11.0.16-tem
-echo '# And we again commit the results'
-wrap git commit -a -m "Spring Boot 2.5 on Java 11"
-
+wrap git commit -a -m "Spring Boot 2.7 on Java 8"
 
 
 # Quick hack to drop Wro4j with unresolvable conflict
 xml ed -P -L -N x="http://maven.apache.org/POM/4.0.0" -d '//x:build/x:plugins/x:plugin/x:artifactId[text()="wro4j-maven-plugin"]/..' pom.xml
 
 
-
 clear
-echo '# Next we run the recipe for the Java 17 migration.'
-wrap ./mvnw org.openrewrite.maven:rewrite-maven-plugin:4.34.0:run \
+echo '# Next we will upgrade to Java 17 using a different module.
+# The Migrate Java module contains recipes to adopt new language features.'
+wrap ./mvnw org.openrewrite.maven:rewrite-maven-plugin:4.35.1:run \
   -Drewrite.recipeArtifactCoordinates=\
-org.openrewrite.recipe:rewrite-migrate-java:1.11.0 \
+org.openrewrite.recipe:rewrite-migrate-java:1.10.0-SNAPSHOT \
   -DactiveRecipes=\
-org.openrewrite.java.migrate.JavaVersion17
-echo '# The change is minimal
-'
-git --no-pager diff pom.xml | head -n 20
-echo '
+org.openrewrite.java.migrate.UpgradeJava17
+
+echo '# - The compiler source and target versions are updated.
+# - Dependencies have been added for jaxb.
+# - We gained the maven-jdeprscan-plugin plugin to check for deprecations.
+# - Cobertura & Wro4j have been dropped, as they are incompatible.'
+wrap git --no-pager diff pom.xml
+
+echo '# Individually, these might be simple changes.
+# But by automating these changes, we can run them at scale,
+# to upgrade our entire application landscape in minutes.
+
 # We update our JDK to now use Java 17'
 wrap sdk use java 17.0.4-tem
-
 echo '
 # And with a final commit, we complete the migration.'
-wrap git commit -a -m "Spring Boot 2.5 on Java 17"
+wrap git commit -a -m "Spring Boot 2.7 on Java 17"
 
 clear
 echo '# Now finally, we run Maven verify to see how we did on the migration.
