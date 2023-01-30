@@ -20,62 +20,68 @@ defaults:
   layout: 'default'
 
 # https://sli.dev/guide/faq.html#scale-the-canvas
+canvasHeight: 720
 canvasWidth: 1280
 
 # Cover slide
-layout: image
-image: /cover-baselone.png
+layout: cover
+background: /fosdem-logo.png
 ---
 
+# Major migrations made easy
+<div/>
 
+tim@moderne.io
 
 <!--
-Hi everyone!
-
-First off I'd like to thank the organizers and sponsors of BaselOne for having me.
-
-I'm excited to be here to present Major Migrations Made Easy.
--->
-
----
-layout: image
-image: /title-baselone.png
----
-
-
-
-<!--
-My name is Tim te Beek, and I'm a Java consultant at JDriven, in the Netherlands.
+My name is Tim te Beek, and I'm a staff software engineer at Moderne.io
 -->
 
 ---
 layout: image-right
-image: https://images.unsplash.com/photo-1615053835081-4218b100dae9?h=900&w=800
+image: /ice.jpg
 ---
 
-# ~~Java Consultant~~
-# Time traveler
+# ~~Consultant~~ → tim@moderne.io
 
 ## Migrate outdated technology
 <br/>
 
-## Switch assignments often
+## Focus on JVM & Automation
 <br/>
 
-## Focus on JVM & Automation
+## Maintain the Golden path
+<br/>
+
+## Discovered OpenRewrite
 
 <!--
-Now as a consultant, I often switch assignments,
-and whenever I do, I feel a bit like a time traveler.
+Now before I switched to Moderne; I was a consultant for five years,
+perhaps much like yourselves.
 
-One moment I'm working with Java 17 and all the latest frameworks & technologies.
+I specialized in migration engineering,
+which is a way of saying
+I would walk into organizations;
+familiarize myself with all the old technology they were still using;
+and then hack away at lifting everything up to the latest versions.
 
-And then the next, I'm thrown ten years back in time, to Java 7 or 8 and outdated frameworks.
+I would frequently find five to ten year old versions of Java, JUnit and Spring,
+which is not great from a security or even developer experience point of view.
 
-My assignments typically see me bring these outdated technology stacks, back up to date.
+Initially I would migrate these services by hand,
+and gradually introduce more and more crude automation.
 
-And perhaps you face the same challenges as I do;
-at a conference like this you hear all about new framework & language features.
+So imagine my excitement last year, when I discovered OpenRewrite.
+OpenRewrite promises to make light work of all such migrations.
+
+I got so excited about this technology,
+that I started to contribute & present about OpenRewrite,
+and eventually quit my job to work on OpenRewrite full time
+
+So, after a nice sabbatical, that brings us here today!
+
+Perhaps you face the same challenges as I did;
+at a conference you'll hear all about new framework & language features.
 
 Yet back at work, you're stuck using Java 8 and JUnit 4.
 And migrating all of that by hand can seem daunting, if it ever gets priority.
@@ -95,7 +101,7 @@ image: >-
 ### Adopted with ease
 <br/>
 
-### Make old feel like new again
+### Make old _feel_ like new again
 <br/>
 
 ### JVM & language improvements
@@ -108,8 +114,8 @@ And it can be fun, to pick up new language features such as records and text blo
 But you don't want to adopt these features manually, or only on a single project.
 
 Instead we will look into automation,
-to make old projects FEEL like new again.
-So you can benefit from JVM,  language and framework improvements.
+to make old projects _FEEL_ like new again.
+So you can benefit from JVM, language and framework improvements.
 -->
 
 ---
@@ -151,16 +157,15 @@ Especially as micro services mean you’re now not upgrading just once, but doze
 Automation may be the only option, especially for large companies maintaining thousands of services.
 -->
 ---
+name: OpenRewrite logo
 layout: center
 ---
 
 ![OpenRewrite](/rewrite-logo.png)
 
 <!--
-So imagine my excitement last year, when I discovered OpenRewrite.
-OpenRewrite promises to make light work of all such migrations.
+Through OpenRewrite, you can now upgrade between versions of Java and Spring, with a simple command.
 
-With a simple command, you can now upgrade between versions of Java and Spring.
 You can even migrate between frameworks, such as from JUnit to AssertJ, and even from Java EE to Spring.
 
 In this talk I’ll tell you all about OpenRewrite;
@@ -181,7 +186,7 @@ layout: two-cols
 
 - Perfect transformation required
 
-- Abstract Syntax Tree parser & manipulation
+- Lossless Semantic Tree parser & manipulation
 
 - Produce minimal changes
 
@@ -199,7 +204,7 @@ OpenRewrite was started at Netflix; Initially to aid in the migration of an inte
 You can probably imagine any logging framework is going to be pervasive throughout an organisation.
 To even consider migrating you would need perfectly accurate automation, especially when usage is spread across hundreds of services.
 
-So they developed a parser to accurately read Java, and turn source code into an Abstract Syntax Tree.
+So they developed a parser to accurately read Java, and turn source code into an Lossless Semantic Tree.
 This model can then be modified to replace the old logging statements with calls to SLF4J. 
 
 Next the migrated model is written out as close as possible to the original source code.
@@ -230,7 +235,7 @@ they found teams often struggled with the same outdated libraries and frameworks
 
 To help these teams adopt the latest versions,
 they applied a different set of transformations,
-through the same Abstract Syntax Tree parser.
+through the same Lossless Semantic Tree parser.
 
 This allowed them to quickly reduce this technical debt,
 bringing teams from Spring Boot 1 to 2, and from JUnit 4 to JUnit 5.
@@ -254,7 +259,7 @@ layout: two-cols
 
 ::right::
 
-![Technologies](/tech-logos.png)
+<img src="/tech-logos.png" style="width:350px;"/>
 
 <!--
 The initial focus for OpenRewrite is on Java Virtual Machine languages and surrounding technologies.
@@ -270,13 +275,16 @@ with recipes available for application frameworks such as Micronaut, Quarkus and
 layout: two-cols
 ---
 
-# Abstract syntax tree
+# Lossless Semantic Tree
 <br/>
 
-## Type attribution
+## Fully type attributed
 <br/>
 
-## Format preservation
+## Format-preserving
+<br/>
+
+## Serializable
 
 ::right::
 
@@ -284,21 +292,23 @@ layout: two-cols
 
 <!--
 OpenRewrite is not the only parser capable of understanding and manipulating Java.
-However, two features set OpenRewrite apart from the competition.
+However, three features set OpenRewrite apart from the competition.
 
-The first is their focus on exact type attribution.
-By having the exact type available on any tree element, they can be sure to only manipulate exact matches.
+The first is the focus on exact type attribution.
+By having the exact type available on any tree element, we can be sure to only manipulate exact matches.
 
-The second characteristic that sets OpenRewrite apart is their format preservation.
-Their parser not only takes into account the functional code, but also the surrounding code style and indentation.
+The second characteristic that sets OpenRewrite apart is the format preservation.
+the parser not only takes into account the functional code, but also the surrounding code style and indentation.
 
-This allows them to accurately reproduce your source file, regardless of further changes.
+This allows us to accurately reproduce your source file, regardless of further changes.
 Any changes made through OpenRewrite, look just like a colleague worked on your code.
 
-Together, these features make OpenRewrite exceptionally good at safe code transformations.
-Their changes are minimally invasive, and guaranteed to work, in part due to their do no harm mentality.
+And finally, our serialization format ensures you're able to query and refactor your code faster, and at scale.
 
-By manipulating the full Abstract Syntax Tree, OpenRewrite can far exceed simple search and replace operations.
+Together, these features make OpenRewrite exceptionally good at safe code transformations.
+the changes are minimally invasive, and guaranteed to work, in part due to our do no harm mentality.
+
+By manipulating the full Lossless Semantic Tree, OpenRewrite can far exceed simple search and replace operations.
 -->
 ---
 # https://duotone.shapefactory.co/?f=e17d00&t=193569&q=lego%20house
@@ -315,7 +325,7 @@ background: https://images.unsplash.com/photo-1560961911-ba7ef651a56c?fit=crop&h
 ## Composition
 
 <!--
-With the full abstract syntax tree built, we need to instruct OpenRewrite what operations to apply, where in your code.
+With the full Lossless Semantic Tree built, we need to instruct OpenRewrite what operations to apply, where in your code.
 
 Recipes are how you define such a group of search and refactoring operations.
 Together they accomplish a higher level task, such as a framework migration.
@@ -347,7 +357,7 @@ image: https://images.unsplash.com/photo-1533557213878-99cda20b1400?fit=crop&h=9
 Individual recipes are implemented as Java visitors
 that first match
 and then modify
-elements of the abstract syntax tree.
+elements of the Lossless Semantic Tree.
 
 There are plenty of examples available,
 but note that you only need a dedicated Java visitor
@@ -381,7 +391,7 @@ There are modules for example for
 
 Think of these as lego sets, with build plans for common migrations and fixes, ready to be used.
 
-In my opinion, the Abstract Syntax Tree, combined with the large collection of Open Source recipes,
+In my opinion, the Lossless Semantic Tree, combined with the large collection of Open Source recipes,
 is what sets OpenRewrite apart from other similar tools, such as Google ErrorProne’s Refaster.
 -->
 
@@ -426,7 +436,7 @@ Notice how each step is reflected as a separate Recipe in this YAML configuratio
 Some refer to and configure generic steps, such as the ChangeType recipe.
 
 Others are implemented as an imperative step;
-a dedicated Java visitor that changes the abstract syntax tree.
+a dedicated Java visitor that changes the Lossless Semantic Tree.
 
 All these steps combine to achieve a complete JUnit 5 migration.
 -->
@@ -510,13 +520,12 @@ index f332257..1d5e072 100644
 <!--
 Now interestingly, we can see how OpenRewrite shines through when it comes to converting expected exceptions.
 
-Having the full power of an abstract syntax tree, combined with a Java visitor, allows us to adopt Assert Throws.
+Having the full power of an Lossless Semantic Tree, combined with a Java visitor, allows us to adopt Assert Throws.
 This would not be possible with a regular expression approach.
 
 And this is just a small sample of what types of transformations are possible.
 -->
 ---
-
 
 # Running recipes
 
@@ -525,9 +534,9 @@ And this is just a small sample of what types of transformations are possible.
 3. Run migration recipe
 
 ```shell {1,3,5}
-./mvnw org.openrewrite.maven:rewrite-maven-plugin:4.34.0:run
+./mvnw -U org.openrewrite.maven:rewrite-maven-plugin:run
 	-Drewrite.recipeArtifactCoordinates=
-		org.openrewrite.recipe:rewrite-spring:4.27.0
+		org.openrewrite.recipe:rewrite-spring:LATEST
 	-DactiveRecipes=
 		org.openrewrite.java.spring.boot2.SpringBoot1To2Migration
 ```
@@ -544,43 +553,12 @@ Then, depending on the changes you want to make,
 Lastly, run the OpenRewrite plugin
 	with the migration Recipe that you want to execute.
 
-The command seen here will  migrate a Spring Boot application to the latest version.
+The command seen here will  migrate a Spring Boot application to the latest 2.7 version.
 This works all the way back to Spring Boot 1.5.
 
 This will update dependencies, properties, and deprecations from any older versions.
 And it includes the JUnit 5 migration seen before, as well as any Spring specific test constructs.
 -->
----
-layout: image-left
-image: /petclinic.png
----
-
-# PetClinic migration
-<br/>
-
-## Spring Boot 1.5 → 2.7
-<br/>
-
-## Java 8 → Java 17
-<br/>
-
-## JUnit 4 → JUnit 5
-
-
-<!--
-To show you just how easy it is to migrate a project, I’ve prepared a small demo.
-
-For this demo, we will upgrade an old Spring PetClinic branch from Spring Boot 1.5 on Java 8, all the way to Spring Boot 2 on Java 17.
-
-We will look at the commands and changes made in more detail along the way.
--->
----
-layout: section
----
-
-# Demo
-
-![Demonstration](https://images.unsplash.com/photo-1590962467161-2555c3b99cf9?crop=entropy&fit=crop&h=900&w=1600)
 
 ---
 layout: image-right
@@ -630,7 +608,7 @@ image: >-
 # Future
 <br/>
 
-## Java 17+
+## Java 18+
 <br/>
 
 ## Kotlin
@@ -645,13 +623,13 @@ image: >-
 So, now that we have seen how it works, and what it can do, let’s briefly look ahead at what is still to come.
 
 As you have seen, OpenRewrite has dedicated parsers for multiple languages already.
-But, as you can imagine, they have some catching up to do still.
+But, as you can imagine, we have some catching up to do still.
 
-They are working on a parser for both Java 17+ and Kotlin.
+We are working on a parser for both Java 18 and up and Kotlin.
 Note that you are perfectly able to run on Java 17, but you can not yet migrate to some of the new language features.
 The interesting thing about Kotlin is going to be that Java migration recipes will just work, even though the languages look very different.
 
-Another subject they are working on is data flow analysis.
+Another subject we are working on is data flow analysis.
 This not only takes into account individual code statements,
 but also how data flows through an appliction.
 This will allow recipes to for instance add immutability or detailed security fixes.
@@ -659,7 +637,7 @@ This will allow recipes to for instance add immutability or detailed security fi
 Another interesting development, is the Spring Boot Migrator project from VMWare.
 It builds upon OpenRewrite, to migrate projects towards Spring from other frameworks.
 It takes a slightly different, more interactive approach,
-which will be helpful when Spring Boot 3 arrives in November.
+which will be helpful to migrate to Spring Boot 3.
 
 All of these features are in active development.
 It is not yet clear when you can use any of this,
@@ -667,16 +645,17 @@ but interesting developments nonetheless.
 -->
 
 ---
+name: Moderne numbers
 layout: center
 ---
 
 ![Numbers](/moderne.io-numbers.png)
 
 <!--
-As a last subject, I think it’s only fair to tell you a bit about the company behind OpenRewrite.
-As I said before, they have committed to making all recipes available Open Source.
+As a last subject, I want to tell you a bit about the company behind OpenRewrite.
+As I said before, Moderne has committed to making all recipes available Open Source.
 
-Their focus is on applying recipes at scale.
+Our focus is on applying recipes at scale.
 
 Through Moderne, clients can discover code patterns across an entire organisation,
 and target these for transformation.
@@ -696,7 +675,7 @@ layout: two-cols
 
 <!--
 And even if you’re not a paying customer,
-you can still use their web interface to browse available recipes,
+you can still use the web interface to browse available recipes,
 and even apply them to Open Source projects.
 
 This can be a great way to start contributing back to Open Source software.
@@ -707,25 +686,63 @@ OpenRewrite itself is very accepting of new contributions.
 The community plays a large role in the development of new recipes.
 -->
 ---
+layout: two-cols
+---
+
+# Community
+
+## VMWare → Spring
+<br/>
+
+## Red Hat → Quarkus, Java 17
+<br/>
+
+## Oracle → Micronaut
+<br/>
+
+## JHipster → JHipster
+<br/>
+
+## Linux foundation → Java Security
+<br/>
+
+## ...
+
+::right::
+
+<Tweet id="1618981528222191616" />
+
+<!--
+Now, as you could probably tell from my email address; we're not exactly a big company.
+But, we're pretty well connected to the broader Java community.
+
+Through collaborations, other companies contribute migration recipes for their frameworks.
+These ensure users are able to migrate easily, and timely with new releases.
+
+And if you maintain, or merely enjoy a particular library or framework,
+you can help all other users by providing migration recipes.
+-->
+
+---
 class: text-4xl
 ---
 
 # Where to learn more
 <div></div>
-
+<br/>
 <img src="/rewrite-logo-only.png" width="60" display="inline"/> docs.openrewrite.org
-
+<br/>
+<br/>
 <logos-github-icon class="text-5xl align-middle"/> github.com/openrewrite
-
 <br/>
 <br/>
-<logos-spring-icon class="text-5xl align-middle"/> github.com/spring-projects-experimental/spring-boot-migrator
-
 <img src="/moderne-logo-only.png" width="60" display="inline"/> public.moderne.io
-
+<br/>
+<br/>
 <logos-slack-icon  class="text-5xl align-middle"/> RewriteOSS.slack.com
-
-<img src="/jdriven-logo.png" width="60" display="inline"/> blog.jdriven.com
+<br/>
+<br/>
+<logos-google-gmail class="text-5xl align-middle"/> tim@moderne.io
 
 <!--
 So with that, we are getting near the end of my presentation.
@@ -740,7 +757,7 @@ If you want to try some Recipes quickly,
 on Open Source projects,
 have a look at public.moderne.io
 
-And if you have any questions, I’ve found the team behind OpenRewrite to be very friendly and responsive.
+And if you have any questions, you can reach out on our public Slack or via email.
 -->
 ---
 
@@ -753,101 +770,25 @@ And if you have any questions, I’ve found the team behind OpenRewrite to be ve
 And finally, if you would like to play around with the commands shown before,
 I’ve written a blogpost to accompany this presentation.
 
-The blogpost migrates the same old Spring PetClinic branch.
+The blogpost migrates an old Spring PetClinic branch from Spring Boot 1.5 on Java 8 to 2.x on Java 17.
 That way you can play around with the commands and see the changes made at every step.
 
 For your own projects, I recommend you start with the testing framework migrations.
 They are an easy way to gain confidence in the tool, and see what it can do for your projects.
 -->
+
 ---
+name: Thank you!
 layout: cover
-background: https://images.unsplash.com/photo-1544535830-9df3f56fff6a?h=900&w=1600
+background: /fosdem-logo.png
 ---
+# Thank you!
 
-# Questions
-
-<!--
-And with that we get to my favorite part of any presentation.
-
-If you have any questions feel free raise your hand to ask them right now.
-
-Or reach out after this presentation either in person or online.
--->
-
----
-layout: image
-#image: https://source.unsplash.com/1600x900/?thanks
-image: https://images.unsplash.com/photo-1608363808030-f58d9f02b06a?fit=crop&fm=jpg&h=900&w=1600
----
-<div></div>
 <!--
 And with that; I'd like to thank you all for your attention!
 -->
 
 ---
-layout: image
-image: /cover-baselone.png
----
----
+name: End
 layout: end
----
-
----
-src: ./demo/checkout.md
----
----
-src: ./demo/sdkman-java-8.md
----
----
-src: ./demo/maven-wrapper.md
----
----
-src: ./demo/commit-1.5-java-8.md
----
----
-src: ./demo/migrate-spring-boot.md
----
----
-src: ./demo/notice-changes.md
----
----
-src: ./demo/hibernate-validator.md
----
----
-src: ./demo/unnecessary-autowired.md
----
----
-src: ./demo/webparameter-arguments.md
----
----
-src: ./demo/application-properties.md
----
----
-src: ./demo/pom-2.5.md
----
----
-src: ./demo/commit-2.5.md
----
-
----
-src: ./demo/migrate-java-11.md
----
----
-src: ./demo/changes-java-11.md
----
----
-src: ./demo/commit-java-11.md
----
-
----
-src: ./demo/migrate-java-17.md
----
----
-src: ./demo/changes-java-17.md
----
----
-src: ./demo/commit-java-17.md
----
----
-src: ./demo/mvn-verify.md
 ---
