@@ -298,7 +298,7 @@ The first is the focus on exact type attribution.
 By having the exact type available on any tree element, we can be sure to only manipulate exact matches.
 
 The second characteristic that sets OpenRewrite apart is the format preservation.
-the parser not only takes into account the functional code, but also the surrounding code style and indentation.
+The parser not only takes into account the functional code, but also the surrounding code style and indentation.
 
 This allows us to accurately reproduce your source file, regardless of further changes.
 Any changes made through OpenRewrite, look just like a colleague worked on your code.
@@ -306,7 +306,7 @@ Any changes made through OpenRewrite, look just like a colleague worked on your 
 And finally, our serialization format ensures you're able to query and refactor your code faster, and at scale.
 
 Together, these features make OpenRewrite exceptionally good at safe code transformations.
-the changes are minimally invasive, and guaranteed to work, in part due to our do no harm mentality.
+The changes are minimally invasive, and guaranteed to work, in part due to our do no harm mentality.
 
 By manipulating the full Lossless Semantic Tree, OpenRewrite can far exceed simple search and replace operations.
 -->
